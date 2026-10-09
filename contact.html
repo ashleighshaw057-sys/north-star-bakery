@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Order | North Star Bakery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>North Star Bakery</h1>
+    <p>Reserve Your Fresh Daily Loaf</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Our Breads</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="contact.html">Pre-Order</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Inquiry & Pre-Order Request</h2>
+      <p>Due to high demand, please submit your reservation request at least 48 hours in advance.</p>
+
+      <!-- Complete Form Element with Validation -->
+      <form action="#" method="POST">
+        <fieldset>
+          <legend>Customer Contact Information</legend>
+          
+          <div class="form-group">
+            <label for="username">Full Name:</label>
+            <input type="text" id="username" name="username" required placeholder="John Doe">
+          </div>
+
+          <div class="form-group">
+            <label for="useremail">Email Address:</label>
+            <input type="email" id="useremail" name="useremail" required placeholder="john@example.com">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Order Selection Details</legend>
+
+          <div class="form-group">
+            <label for="product-select">Select Your Loaf:</label>
+            <select id="product-select" name="product-select" required>
+              <option value="">-- Choose an option --</option>
+              <option value="classic">Classic Country Sourdough</option>
+              <option value="rosemary">Dark Rosemary Garlic</option>
+              <option value="einkorn">Ancient Einkorn Loaf</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Quantity (Max 5):</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="5" required value="1">
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Special Preparation Requests:</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="List any requests or allergies here..."></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit">Submit Pre-Order Request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 North Star Bakery. Built for Touchstone Submission.</p>
+  </footer>
+
+</body>
+</html>

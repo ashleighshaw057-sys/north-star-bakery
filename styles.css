@@ -1,0 +1,302 @@
+/* ==========================================================================
+   1. GLOBAL SYSTEM & DESIGN VARIABLES (DESIGN SYSTEM)
+   ========================================================================== */
+:root {
+  /* Color Palette (3 Core Colors for Artisanal Bakery Tone) */
+  --bg-cream: #FAF6F0;       /* Warm Cream - Base Page Background */
+  --text-espresso: #2C1E11;  /* Rich Espresso - High Contrast Body Text */
+  --accent-honey: #D98324;   /* Golden Honey - Interactive Links & Buttons */
+  --white: #FFFFFF;          /* Pure White - Section Structural Backgrounds */
+  --gray-light: #E6E0D8;     /* Warm Gray - Consistent Borders & Lines */
+
+  /* Typography Scale System (Max 2 Font Families) */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+/* Base Layout Reset & Predictable Box Model Sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-cream);
+  color: var(--text-espresso);
+  line-height: 1.6;
+  padding: 15px;
+}
+
+/* ==========================================================================
+   2. REPEATED LAYOUT COMPONENTS (GLOBAL SHELL)
+   ========================================================================== */
+header {
+  text-align: center;
+  padding: 24px 12px;
+  background-color: var(--white);
+  border-bottom: 4px solid var(--accent-honey);
+  margin-bottom: 24px;
+  border-radius: 4px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 16px;
+  color: var(--text-espresso);
+  font-weight: 700;
+}
+
+h1 { 
+  font-size: 2.2rem; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+}
+
+h2 { 
+  font-size: 1.65rem; 
+  border-bottom: 2px solid var(--gray-light); 
+  padding-bottom: 6px; 
+}
+
+/* Global Navigation Menu System */
+nav {
+  background-color: var(--text-espresso);
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* Mobile-First Stacked Layout */
+  gap: 12px;
+  align-items: center;
+}
+
+nav a {
+  color: var(--bg-cream);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 24px; /* Accessible Touch Targets (Minimum 44px height) */
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover, nav a:focus {
+  background-color: var(--accent-honey);
+  color: var(--white);
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Main Content Wrapper */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+section {
+  background-color: var(--white);
+  padding: 24px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(44, 30, 17, 0.06);
+}
+
+/* Footer Element */
+footer {
+  text-align: center;
+  padding: 24px;
+  margin-top: 36px;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--gray-light);
+  color: #5c4d3c;
+}
+
+/* ==========================================================================
+   3. MEDIA & INTERACTIVE CONTENT ASSETS
+   ========================================================================== */
+/* Figure Element with Caption (Signature Loaf Layout) */
+figure {
+  margin: 20px 0;
+  text-align: center;
+  background-color: var(--bg-cream);
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid var(--gray-light);
+}
+
+figure img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 4px;
+}
+
+figcaption {
+  font-family: var(--font-heading);
+  font-style: italic;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #4a3b2c;
+  line-height: 1.4;
+}
+
+/* Responsive Picture Element Container */
+picture img {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  display: block;
+  margin: 16px auto;
+  border-radius: 6px;
+}
+
+/* Video Component Layout & Accessibility Fallbacks */
+video {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 16px auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.media-fallback {
+  background-color: var(--gray-light);
+  padding: 16px;
+  border-radius: 4px;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--text-espresso);
+  margin-top: 12px;
+}
+
+/* ==========================================================================
+   4. INQUIRY AND PRE-ORDER FORM ARCHITECTURE
+   ========================================================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+fieldset {
+  border: 2px solid var(--gray-light);
+  padding: 24px;
+  border-radius: 6px;
+}
+
+legend {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0 12px;
+  color: var(--accent-honey);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+/* Ensure accessible tracking for standard fields */
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--gray-light);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-espresso);
+  background-color: var(--bg-cream);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* High-Contrast Interactive Focus States */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-honey);
+  box-shadow: 0 0 0 3px rgba(217, 131, 36, 0.25);
+  background-color: var(--white);
+}
+
+/* Form Action Trigger Button */
+button[type="submit"] {
+  background-color: var(--accent-honey);
+  color: var(--white);
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: var(--text-espresso);
+  outline: none;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE LAYOUT SYSTEMS (DESKTOP REFLOW BREAKPOINTS)
+   ========================================================================== */
+@media (min-width: 768px) {
+  body {
+    padding: 40px;
+    max-width: 1100px;
+    margin: 0 auto; /* Centers the desktop canvas shell container */
+  }
+
+  header {
+    padding: 40px 20px;
+  }
+
+  /* Reflow Navigation Stack into a Horizontal Inline Bar */
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  nav a {
+    width: auto;
+    padding: 8px 16px;
+  }
+
+  /* Multi-column grid container for side-by-side elements on desktop screens */
+  .grid-container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .grid-column {
+    flex: 1;
+  }
+}
